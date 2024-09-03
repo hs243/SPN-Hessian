@@ -47,7 +47,7 @@ def RAT_SPN(num_vars: int, num_latents: int, depth: int, num_repetitions: int, n
         block_size = min(256, max_cdf_power_of_2(num_latents))
 
     if input_dist is not None:
-        input_node_type, input_node_params = input_dist._get_constructor()
+        input_node_type= input_dist._get_constructor()
 
     assert num_latents % block_size == 0, f"`num_latents` ({num_latents}) not divisible by `block_size` ({block_size})."
     num_node_blocks = num_latents // block_size
